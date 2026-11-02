@@ -1,0 +1,14 @@
+{
+  "name": "متجر بن جمال للأزياء الرجالية",
+  "short_name": "بن جمال",
+  "description": "متجر الأزياء والقمصان الرجالية الفاخرة - تسوق أرقى قمصان البولو الطبيعية 100% مع توصيل سريع",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0b1426",
+  "theme_color": "#d3a94c",
+  "dir": "rtl",
+  "lang": "ar",
+  "categories": ["shopping", "lifestyle", "fashion"]
+}

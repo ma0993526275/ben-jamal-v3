@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cairo:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-gold-300: #edd499;
+    --color-gold-400: #d3a94c;
+    --color-gold-500: #b88d36;
+    --color-gold-600: #936e26;
+}
+
+:root {
+    --bg-dark: #08080c;
+    --bg-surface: #100a0e;
+    --bg-card: #140d12;
+    --accent-gold: #d3a94c;
+    --accent-gold-light: #e0c174;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    direction: rtl;
+    background-color: #08080c;
+    color: #ffffff;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.font-display {
+    font-family: "Anton", "Cairo", sans-serif;
+    letter-spacing: -0.03em;
+}
+
+.font-serif-luxury {
+    font-family: "Playfair Display", "Cairo", serif;
+}
+
+/* Ambient glow backgrounds like HEEMS */
+.heems-ambient-bg {
+    background-color: #08080c;
+    background-image: 
+        radial-gradient(1200px 600px at 50% 15%, rgba(211, 169, 76, 0.14), rgba(211, 169, 76, 0) 65%),
+        radial-gradient(800px 500px at 20% 80%, rgba(30, 58, 138, 0.18), rgba(30, 58, 138, 0) 70%),
+        linear-gradient(180deg, #08080c 0%, #120b10 100%);
+}
+
+.heems-section-bg {
+    background-color: #08080c;
+    background-image: 
+        radial-gradient(1000px 700px at 50% 0%, rgba(211, 169, 76, 0.12), rgba(211, 169, 76, 0) 70%),
+        linear-gradient(180deg, #08080c 0%, #140d13 100%);
+}
+
+/* Floating pill navbar style from HEEMS */
+.floating-pill-nav {
+    background: rgba(18, 11, 16, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 1px rgba(211, 169, 76, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* 3D Perspective Showcase */
+.showcase-3d-container {
+    perspective: 1200px;
+    transform-style: preserve-3d;
+}
+
+.showcase-3d-card {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: scale(1.03) rotateX(16deg);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-3d-card:hover {
+    transform: scale(1.05) rotateX(8deg);
+}
+
+/* Marquee Continuous Ticker */
+@keyframes marqueeScroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(50%); }
+}
+
+.animate-marquee {
+    display: flex;
+    width: 200%;
+    animation: marqueeScroll 22s linear infinite;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+/* Hide scrollbars for snap scrolling tracks */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Custom Scrollbar for drawers and body */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #08080c;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #33261a;
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d3a94c;
+}
+
+/* Drawer & Modal Pop animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes popUp {
+    from { opacity: 0; transform: scale(0.96) translateY(12px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-drawer-in {
+    animation: slideInLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pop-up {
+    animation: popUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
